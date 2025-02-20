@@ -8,7 +8,8 @@
 		"vscode": {
 			"extensions": [
 				"GitHub.copilot",
-				"ms-python.python"
+				"ms-python.python",
+				"ms-vscode.makefile-tools"
 			]
 		}
 	}
