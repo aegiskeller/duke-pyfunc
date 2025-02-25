@@ -4,3 +4,4 @@ black
 click
 uvicorn
 fastapi
+geopy
