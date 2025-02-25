@@ -3,13 +3,13 @@ install:
 		pip install -r requirements.txt
 
 test:
-	python -m pytest -vv test_hello.py
+	python -m pytest -vv tests
 
 format:
-	black *.py
+	black *.py dukelib/*.py
 
 lint:
-	pylint --disable=R,C hello.py
+	pylint --disable=R,C *.py dukelib/*.py
 
 refactor: lint format
 
