@@ -29,6 +29,8 @@ def distance(city1, city2):
     coord1 = cities[city1]
     coord2 = cities[city2]  
     # calculate the distance between the two cities
+    # distance('Sydney', 'Brisbane')
+    # Out[2]: 730.4061063515427
     distance = geopy.distance.distance(coord1, coord2).km
     return distance
 
@@ -37,19 +39,23 @@ def distance(city1, city2):
 def coordinates(city):
     """
     This function returns the coordinates of a city in Australia.
+    In [3]: coordinates('Sydney')
+    Out[3]: (-33.8688, 151.2093)
+
     """
     return cities[city] # return the coordinates of the city    
 
 # calaulate the total distance between a list of cities
 
-def total_distance(city_list):
+def total_distance():
     """
     This function calculates the total distance between a list of cities in Australia.
+    In [2]: total_distance()
+    Out[2]: 11431.57861413497
     """
     total_distance = 0
-    for i in range(len(city_list)-1):
-        total_distance += distance(city_list[i], city_list
-        [i+1])
+    for i in range(len(cities)-1):
+        total_distance += distance(list(cities.keys())[i], list(cities.keys())[i+1])
     return total_distance   
 
 
