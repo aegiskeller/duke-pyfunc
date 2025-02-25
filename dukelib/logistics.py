@@ -58,6 +58,12 @@ def total_distance():
         total_distance += distance(list(cities.keys())[i], list(cities.keys())[i+1])
     return total_distance   
 
+def cities_list():
+    """
+    This function returns the list of cities in Australia.
+    """
+    return list(cities.keys())  # return the list of cities
+
 
 
 

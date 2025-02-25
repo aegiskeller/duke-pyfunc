@@ -6,3 +6,4 @@ click
 uvicorn
 fastapi
 geopy
+httpx

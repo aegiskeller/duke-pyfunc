@@ -1,6 +1,9 @@
 # test the functions defined in the logistics.py file
 
-from dukelib.logistics import distance, coordinates, total_distance
+from dukelib.logistics import distance, coordinates, total_distance, cities_list
+from fastapi.testclient import TestClient
+from main import app
+import pytest
 
 def test_distance():
     assert distance('Sydney', 'Brisbane') == 730.4061063515427
@@ -12,3 +15,18 @@ def test_coordinates():
 
 def test_total_distance():
     assert total_distance() == 11431.57861413497
+
+def test_cities_list():
+    assert cities_list() == ['Sydney', 'Melbourne', 'Brisbane', 'Perth', 'Adelaide', 'Gold Coast', 'Newcastle', 'Canberra', 'Wollongong', 'Sunshine Coast']
+
+# test the FastAPI web server
+
+@pytest.fixture
+def client():
+    with TestClient(app) as client:
+        yield client
+
+def test_read_main(client):
+    response = client.get("/")
+    assert response.status_code == 200
+    assert response.json() == {"message": "Welcome to the logistics API. You can use this API to calculate the distance between two cities in Australia."}

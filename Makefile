@@ -3,7 +3,7 @@ install:
 		pip install -r requirements.txt
 
 test:
-	python -m pytest -vv test_project.py test_logistics.py
+	python -m pytest -vv test_project.py test_logistics.py main.py
 
 format:
 	black *.py dukelib/*.py
@@ -13,4 +13,4 @@ lint:
 
 refactor: lint format
 
-all: install lint test
+all: install lint testmake test
