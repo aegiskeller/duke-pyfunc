@@ -3,7 +3,7 @@ install:
 		pip install -r requirements.txt
 
 test:
-	python -m pytest -vv test_project.py test_logistics.py main.py
+	python -m pytest -vv test_project.py test_logistics.py main.py --cov=main
 
 format:
 	black *.py dukelib/*.py

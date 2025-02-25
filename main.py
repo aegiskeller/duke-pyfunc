@@ -4,6 +4,7 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 from dukelib.logistics import distance, coordinates, total_distance, cities_list
+from dukelib.wiki import city_summary, city_keywords
 
 app = FastAPI()
 
@@ -39,6 +40,15 @@ async def get_travel_time(city1: str, city2: str):
     distance_between_cities = distance(city1, city2)
     travel_time = distance_between_cities / 60
     return {"travel_time": travel_time}
+
+#  build a post method to obtain wikipedia summary for a city
+@app.post("/citykeywords")
+async def get_city_keywords(city: str):
+    """
+    This function returns the keywords for a city.
+    """
+    keywords = city_keywords(city)
+    return {"keywords": keywords}
 
 if __name__ == "__main__":
     import uvicorn

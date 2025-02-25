@@ -30,3 +30,14 @@ def test_read_main(client):
     response = client.get("/")
     assert response.status_code == 200
     assert response.json() == {"message": "Welcome to the logistics API. You can use this API to calculate the distance between two cities in Australia."}
+
+def test_read_cities(client):
+    response = client.get("/cities")
+    assert response.status_code == 200
+    assert response.json() == {"cities": ['Sydney', 'Melbourne', 'Brisbane', 'Perth', 'Adelaide', 'Gold Coast', 'Newcastle', 'Canberra', 'Wollongong', 'Sunshine Coast']}
+
+
+#def test_read_distance(client):
+#    response = client.post("/distance", json={"city1": "Sydney", "city2": "Brisbane"})
+#    assert response.status_code == 200
+#    assert response.json() == {"distance": 730.4061063515427}

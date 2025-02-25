@@ -7,3 +7,5 @@ uvicorn
 fastapi
 geopy
 httpx
+wikipedia
+git+https://github.com/LIAAD/yake
