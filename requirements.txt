@@ -8,4 +8,4 @@ fastapi==0.89.1
 geopy==2.3.0
 httpx==0.23.1
 wikipedia==1.4.0
-git+https://github.com/LIAAD/yake@0.4.8
+git+https://github.com/LIAAD/yake
