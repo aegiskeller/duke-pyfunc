@@ -19,7 +19,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from torch.utils.data import DataLoader, TensorDataset
 from torch.autograd import Variable
-from sklearn.preprocessing import Standard
+from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
 
 # generate synthetic data

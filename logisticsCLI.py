@@ -28,12 +28,11 @@ def coordinates_cmd(city):
 
 # build a click command to calculate the total distance between a list of cities
 @cli.command("total-distance")
-@click.argument('city_list', nargs=-1)
-def total_distance_cmd(city_list):
+def total_distance_cmd():
     """
     This function calculates the total distance between a list of cities in Australia.
     """
-    print(total_distance(city_list))
+    print(total_distance())
 
 if __name__ == "__main__":
     cli()
